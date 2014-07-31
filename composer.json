@@ -1,6 +1,9 @@
 {
 	"name": "peatrevo/weboxapi",
 	"description": "PHP Wrapper for Webox API",
+	"require": {
+        "guzzle/guzzle": "<4.0,>=3.8"
+    },
 	"type": "library",
 	"keywords": ["webox"],
 	"license": "MIT",
@@ -12,7 +15,9 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"peatrevo\\weboxapi\\": ""
+			//"peatrevo\\weboxapi\\": "",
+			"Weboxphp": "src/"
 		}
-	}
+	},
+	"minimum-stability": "stable"
 }
