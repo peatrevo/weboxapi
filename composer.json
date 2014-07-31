@@ -1,0 +1,18 @@
+{
+	"name": "peatrevo/weboxapi",
+	"description": "PHP Wrapper for Webox API",
+	"type": "library",
+	"keywords": ["webox"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "peat",
+			"email": "peat@me.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"peatrevo\\weboxapi\\": ""
+		}
+	}
+}
