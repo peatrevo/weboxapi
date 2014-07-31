@@ -1,13 +1,6 @@
 <?PHP
 namespace Weboxphp\Connection;
 
-require_once 'Weboxphp/Connection/Exceptions/GenericHTTPError.php';
-require_once 'Weboxphp/Connection/Exceptions/InvalidCredentials.php';
-require_once 'Weboxphp/Connection/Exceptions/NoDomainsConfigured.php';
-require_once 'Weboxphp/Connection/Exceptions/MissingRequiredParameters.php';
-require_once 'Weboxphp/Connection/Exceptions/MissingEndpoint.php';
-
-
 use Guzzle\Http\Client as Guzzle;
 use Weboxphp\WeboxClient;
 
