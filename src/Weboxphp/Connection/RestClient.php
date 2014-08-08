@@ -27,6 +27,7 @@ class RestClient{
 
 	public function post($endpointUrl, $postData = array(), $files = array()) {
 		$request = $this->wbxClient->post($endpointUrl, array(), $postData);		
+		$request->setHeader('Authorization', 'Bearer ' . $this->apiKey);
 		$response = $request->send();
 		return $this->responseHandler($response);
 	}
@@ -60,7 +61,7 @@ class RestClient{
 
 	public function responseHandler($responseObj){
 		$httpResponseCode = $responseObj->getStatusCode();
-		if($httpResponseCode === 200){
+		if($httpResponseCode === 200 || $httpResponseCode === 201){
 			$jsonResponseData = json_decode($responseObj->getBody(), true);
 			$result = new \stdClass();
 			$result->http_response_body = $jsonResponseData;
