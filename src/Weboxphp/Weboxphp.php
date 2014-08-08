@@ -9,9 +9,9 @@ use Weboxphp\Connection\RestClient;
 
 class Weboxphp {
 
-	public function __construct($apiKey = null, $apiEndpoint = "api-hu.easypack24.net", $apiVersion = "v4", $ssl = true) {
+	public function __construct($apiKey = null, $apiEndpoint = $apiUrl, $apiVersion = "v4", $ssl = true) {
 		$this->restClient = new RestClient($apiKey, $apiEndpoint, $apiVersion, $ssl);
-    }
+        }
 	public function post($endpointUrl, $postData = array(), $files = array()){
 		return $this->restClient->post($endpointUrl, $postData, $files);
 	}
