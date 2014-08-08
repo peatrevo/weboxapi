@@ -16,9 +16,8 @@ class RestClient{
 	private $apiUrl;
 	protected $wbxClient;
 
-	public function __construct($apiKey, $apiUrl,  $apiEndpoint, $apiVersion, $ssl){
+	public function __construct($apiKey, $apiEndpoint, $apiVersion, $ssl){
 		$this->apiKey = $apiKey;
-		$this->apiUrl = $apiUrl;
 		$this->wbxClient = new Guzzle($this->generateEndpoint($apiEndpoint, $apiVersion, $ssl));
 		$this->wbxClient->setDefaultOption('curl.options', array('CURLOPT_FORBID_REUSE' => true));
 		$this->wbxClient->setDefaultOption('auth', array (API_USER, $this->apiKey));	
