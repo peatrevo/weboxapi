@@ -13,7 +13,6 @@ use Weboxphp\Connection\Exceptions\MissingEndpoint;
 class RestClient{
 
 	private $apiKey;
-	private $apiUrl;
 	protected $wbxClient;
 
 	public function __construct($apiKey, $apiEndpoint, $apiVersion, $ssl){
