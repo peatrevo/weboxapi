@@ -64,6 +64,7 @@ class RestClient{
 			$jsonResponseData = json_decode($responseObj->getBody());
 			$result = new \stdClass();
 			$result->http_response_body = $jsonResponseData;
+
 		}
 		elseif($httpResponseCode == 400){
 			throw new MissingRequiredParameters(EXCEPTION_MISSING_REQUIRED_PARAMETERS);
