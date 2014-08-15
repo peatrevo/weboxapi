@@ -61,7 +61,7 @@ class RestClient{
 	public function responseHandler($responseObj){
 		$httpResponseCode = $responseObj->getStatusCode();
 		if($httpResponseCode === 200 || $httpResponseCode === 201){
-			$jsonResponseData = json_decode($responseObj->getBody(), true);
+			$jsonResponseData = json_decode($responseObj->getBody());
 			$result = new \stdClass();
 			$result->http_response_body = $jsonResponseData;
 		}
