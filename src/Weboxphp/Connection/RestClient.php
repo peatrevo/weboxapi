@@ -67,16 +67,16 @@ class RestClient{
 
 		}
 		elseif($httpResponseCode == 400){
-			throw new MissingRequiredParameters(EXCEPTION_MISSING_REQUIRED_PARAMETERS);
+			throw new MissingRequiredParameters(WBX_EXCEPTION_MISSING_REQUIRED_PARAMETERS);
 		}
 		elseif($httpResponseCode == 401){
-			throw new InvalidCredentials(EXCEPTION_INVALID_CREDENTIALS);
+			throw new InvalidCredentials(WBX_EXCEPTION_INVALID_CREDENTIALS);
 		}
 		elseif($httpResponseCode == 404){
-			throw new MissingEndpoint(EXCEPTION_MISSING_ENDPOINT);
+			throw new MissingEndpoint(WBX_EXCEPTION_MISSING_ENDPOINT);
 		}
 		else{
-			throw new GenericHTTPError(EXCEPTION_GENERIC_HTTP_ERROR);
+			throw new GenericHTTPError(WBX_EXCEPTION_GENERIC_HTTP_ERROR);
 		}
 		$result->http_response_code = $httpResponseCode;
 		return $result;
