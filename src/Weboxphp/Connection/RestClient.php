@@ -15,6 +15,7 @@ class RestClient{
 	private $apiKey;
 	protected $wbxClient;
 
+
 	public function __construct($apiKey, $apiEndpoint, $apiVersion, $ssl){
 		$this->apiKey = $apiKey;
 		$this->wbxClient = new Guzzle($this->generateEndpoint($apiEndpoint, $apiVersion, $ssl));
