@@ -19,9 +19,9 @@ class RestClient{
 		$this->apiKey = $apiKey;
 		$this->wbxClient = new Guzzle($this->generateEndpoint($apiEndpoint, $apiVersion, $ssl));
 		$this->wbxClient->setDefaultOption('curl.options', array('CURLOPT_FORBID_REUSE' => true));
-		$this->wbxClient->setDefaultOption('auth', array (API_USER, $this->apiKey));	
+		$this->wbxClient->setDefaultOption('auth', array (WBX_API_USER, $this->apiKey));	
 		$this->wbxClient->setDefaultOption('exceptions', false);
-		$this->wbxClient->setUserAgent(SDK_USER_AGENT . '/' . SDK_VERSION);
+		$this->wbxClient->setUserAgent(WBX_SDK_USER_AGENT . '/' . WBX_SDK_VERSION);
 	}
 
 	public function post($endpointUrl, $postData = array(), $files = array()) {
