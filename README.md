@@ -57,7 +57,6 @@ Example Contents:
 
 **$httpResponseCode** will contain an integer.
 
-
 **$httpResponseBody** will contain an object of the API response. In the above
 example, a var_dump($result) would contain the following:
 
@@ -120,4 +119,18 @@ object(stdClass)#46 (15) {
   ["cod_amount"]=>
   string(3) "0.0"
 }
+```
+
+Pay for Parcel
+--------------
+Once you have a parcel in created status the next step is to pay for this parcel.
+```php
+$wbx = new Weboxphp("token-example");
+$parcel = "1000000003123";
+$wbx->payParcel($parcel);
+
+$httpResponseCode = $result->http_response_code;
+$httpResponseBody = $result->http_response_body;
+
+#If the request returns with 200 response code the status of the parcel is "prepared"
 ```

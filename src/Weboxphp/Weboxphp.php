@@ -18,6 +18,10 @@ class Weboxphp {
 		$result = $this->post("customers/$clientEmail/parcels", $postData);
 		return $result;
 	}
+	public function payParcel($parcelId){
+		$result = $this->post("parcels/$parcelId/pay", array("parcel_id"=>$parcelId));
+		return $result;
+	}
 	public function post($endpointUrl, $postData = array(), $files = array()){
 		return $this->restClient->post($endpointUrl, $postData, $files);
 	}
