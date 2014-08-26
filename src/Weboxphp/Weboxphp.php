@@ -8,10 +8,15 @@ use Weboxphp\Parcels\Exceptions;
 use Weboxphp\Connection\RestClient;
 
 class Weboxphp {
+	protected $clientEmail;
 
 	public function __construct($apiKey = null, $apiEndpoint = "api-hu.easypack24.net", $apiVersion = "v4", $ssl = true) {
 		$this->restClient = new RestClient($apiKey, $apiEndpoint, $apiVersion, $ssl);
         }
+	public function createParcel($clientEmail, $postData){
+		$result = $this->post("customers/$clientEmail/parcels", $postData);
+		return $result;
+	}
 	public function post($endpointUrl, $postData = array(), $files = array()){
 		return $this->restClient->post($endpointUrl, $postData, $files);
 	}
