@@ -132,5 +132,5 @@ $wbx->payParcel($parcel);
 $httpResponseCode = $result->http_response_code;
 $httpResponseBody = $result->http_response_body;
 
-#If the request returns with 200 response code the status of the parcel is "prepared"
+# If the request returns with 200 response code, the status of the parcel is "prepared"
 ```
