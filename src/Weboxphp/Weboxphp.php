@@ -8,6 +8,7 @@ use Weboxphp\Parcels\Exceptions;
 use Weboxphp\Connection\RestClient;
 
 class Weboxphp {
+
 	protected $clientEmail;
 
 	public function __construct($apiKey = null, $apiEndpoint = "api-hu.easypack24.net", $apiVersion = "v4", $ssl = true) {
