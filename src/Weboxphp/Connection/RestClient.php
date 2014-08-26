@@ -8,6 +8,10 @@ use Weboxphp\Connection\Exceptions\GenericHTTPError;
 use Weboxphp\Connection\Exceptions\InvalidCredentials;
 use Weboxphp\Connection\Exceptions\NoDomainsConfigured;
 use Weboxphp\Connection\Exceptions\MissingRequiredParameters;
+use Weboxphp\Connection\Exceptions\NoContent;
+use Weboxphp\Connection\Exceptions\ForbiddenResource;
+use Weboxphp\Connection\Exceptions\InternalServerError;
+use Weboxphp\Connection\Exceptions\MethodNotAllowed;
 use Weboxphp\Connection\Exceptions\MissingEndpoint;
 
 class RestClient{
@@ -67,15 +71,27 @@ class RestClient{
 			$result->http_response_body = $jsonResponseData;
 
 		}
+		elseif($httpResponseCode == 204){
+                        throw new NoContent(WBX_EXCEPTION_NO_CONTENT);
+                }
 		elseif($httpResponseCode == 400){
 			throw new MissingRequiredParameters(WBX_EXCEPTION_MISSING_REQUIRED_PARAMETERS);
 		}
 		elseif($httpResponseCode == 401){
 			throw new InvalidCredentials(WBX_EXCEPTION_INVALID_CREDENTIALS);
 		}
+		elseif($httpResponseCode == 403){
+                        throw new ForbiddenResource(WBX_FORBIDDEN_RESOURCE);
+                }
 		elseif($httpResponseCode == 404){
 			throw new MissingEndpoint(WBX_EXCEPTION_MISSING_ENDPOINT);
 		}
+		elseif($httpResponseCode == 405){
+                        throw new MethodNotAllowed(WBX_METHOD_NOT_ALLOWED);
+                }
+		elseif($httpResponseCode == 500){
+                        throw new InternalServerError(WBX_INTERNAL_SERVER_ERROR);
+                }
 		else{
 			throw new GenericHTTPError(WBX_EXCEPTION_GENERIC_HTTP_ERROR);
 		}

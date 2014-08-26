@@ -21,6 +21,9 @@ const WBX_INVALID_PARAMETER_INLINE = "Inline images must be passed with an \"@\"
 const WBX_TOO_MANY_PARAMETERS_CAMPAIGNS = "You've exceeded the maximum (3) campaigns for a single message.";
 const WBX_TOO_MANY_PARAMETERS_TAGS = "You've exceeded the maximum (3) tags for a single message.";
 const WBX_TOO_MANY_PARAMETERS_RECIPIENT = "You've exceeded the maximum recipient count (1,000) on the to field with autosend disabled.";
-
+const WBX_NO_CONTENT = "The request was successful but there is no representation to return (i.e. the response is empty).";
+const WBX_FORBIDDEN_RESOURCE = "The authenticated user is not allowed to access the specified API endpoint.";
+const WBX_INTERNAL_SERVER_ERROR = "Internal server error. This could be caused by internal program errors.";
+const WBX_METHOD_NOT_ALLOWED = "Method not allowed. Please check the Allow header for allowed HTTP methods.";
 
 ?>
