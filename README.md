@@ -22,10 +22,28 @@ or add
 to the require section of your `composer.json` file.
 
 
+Next, require Composer's autoloader, in your application, to automatically
+load the Webox SDK in your project:
+```PHP
+require 'vendor/autoload.php';
+use Weboxphp\Weboxphp;
+```
+
 Usage
 -----
-
-Once the extension is installed, simply use it in your code by  :
+Here's how to create a parcel using the SDK:
 
 ```php
-<?= \peatrevo\weboxapi\AutoloadExample::widget(); ?>```
+# First, instantiate the SDK with your API token and define your email address.
+$wbx = new Weboxphp("token-example");
+$email = "hello@example.com";
+
+# Now, compose and create your parcel.
+$wbx->createParcel($email, array('size'    		=> 'A',
+                                 'target_machine_id'  	=> 'HUWBX001',
+                                 'receiver_phone' 	=> '301234567',
+				 'receiver_email' 	=> 'bob@example.com',
+				 'customer_reference' 	=> 'custom reference number of parcel',
+                                 'cod_amount'    	=> '1200'));
+```
+
