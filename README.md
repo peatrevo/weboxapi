@@ -45,13 +45,18 @@ $wbx->createParcel($email, array('size'    				=> 'A',
 								 'receiver_email' 		=> 'bob@example.com',
 								 'customer_reference' 	=> 'custom reference number of parcel',
                                  'cod_amount'    		=> '0'));
+
+$httpResponseCode = $result->http_response_code;
+$httpResponseBody = $result->http_response_body;
 ```
 
 Response
 --------
 
 Example Contents:
+
 **$httpResponseCode** will contain an integer.
+
 
 **$httpResponseBody** will contain an object of the API response. In the above
 example, a var_dump($result) would contain the following:
